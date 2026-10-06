@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://unpkg.com">
+<title>Solar Power Plants &amp; EPC Solutions | Charzee</title>
+<meta name="description" content="Charzee designs, supplies, installs and maintains rooftop, commercial, industrial and ground-mounted solar power plants across India, with optional battery storage and live monitoring.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../../../assets/css/style.css" rel="stylesheet"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<style>
+    /* ===== Solar Power Plants — page layout ===== */
+    .spp-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .spp-sec { padding: 56px 0; }
+    .spp-sec.alt { background: var(--light); }
+    .spp-head { max-width: 680px; margin: 0 auto 36px; text-align: center; }
+    .spp-head.left { margin: 0 0 28px; text-align: left; }
+    .spp-eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary-dark); margin-bottom: 10px; }
+    .spp-head h2 { font-size: 34px; font-weight: 700; color: var(--heading); line-height: 1.25; margin: 0 0 12px; }
+    .spp-head p { color: var(--text); margin: 0; line-height: 1.7; }
+
+    /* Hero */
+    .spp-hero { position: relative; color: #fff; padding: 110px 0 0; background: #111827 url("../../../assets/images/products/solar-plant-hero.webp") center/cover no-repeat; overflow: hidden; }
+    .spp-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,18,35,.82) 0%, rgba(10,18,35,.55) 40%, rgba(10,18,35,.08) 75%, rgba(10,18,35,0) 100%); }
+    .spp-hero .spp-wrap { position: relative; z-index: 1; }
+    .spp-hero-grid { padding-bottom: 72px; }
+    .spp-hero-copy { max-width: 620px; }
+    .spp-hero .spp-eyebrow { color: #5eead4; }
+    .spp-hero h1 { font-size: 52px; font-weight: 800; line-height: 1.12; margin: 0 0 18px; color: #fff; }
+    .spp-hero h1 span { background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .spp-hero p { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.82); margin: 0 0 26px; }
+    .spp-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .spp-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.2); background: rgba(10,18,35,.55); backdrop-filter: blur(6px); }
+    .spp-stat { padding: 22px 20px; border-right: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; gap: 14px; }
+    .spp-stat:last-child { border-right: 0; }
+    .spp-stat i { font-size: 26px; color: #0795E9; }
+    .spp-stat strong { display: block; font-size: 16px; color: #fff; }
+    .spp-stat small { color: rgba(255,255,255,.7); font-size: 13px; }
+
+    /* Segments — bento */
+    .spp-bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .spp-tile { background: #fff; border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 24px; transition: var(--transition); }
+    .spp-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .spp-tile i { font-size: 26px; color: #0795E9; display: block; margin-bottom: 12px; }
+    .spp-tile h4 { font-size: 18px; font-weight: 700; color: var(--heading); margin: 0 0 6px; }
+    .spp-tile p { font-size: 14.5px; line-height: 1.65; color: var(--text); margin: 0; }
+    .spp-tile.feature { grid-column: span 2; grid-row: span 2; background: #111827; color: #fff; border: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+    .spp-tile.feature i { color: #0795E9; font-size: 40px; }
+    .spp-tile.feature h4 { color: #fff; font-size: 26px; }
+    .spp-tile.feature p { color: rgba(255,255,255,.8); font-size: 16px; }
+
+    /* Plant types — comparison */
+    .spp-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .spp-plan { background: #fff; border: 1px solid var(--gray-light); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+    .spp-plan.hot { border: 2px solid var(--primary); box-shadow: var(--shadow); }
+    .spp-plan .tag { position: absolute; top: -12px; left: 24px; background: var(--gradient-primary); color: #fff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 50px; }
+    .spp-plan h3 { font-size: 22px; font-weight: 700; color: var(--heading); margin: 0 0 6px; }
+    .spp-plan .sub { color: var(--text); font-size: 14.5px; margin: 0 0 16px; }
+    .spp-plan ul { list-style: none; padding: 0; margin: 0; }
+    .spp-plan li { display: flex; gap: 10px; padding: 8px 0; border-top: 1px dashed var(--gray-light); font-size: 14.5px; color: var(--gray-dark); }
+    .spp-plan li i { color: #0795E9; margin-top: 3px; }
+
+    /* Process — stepper */
+    .spp-steps { display: grid; grid-template-columns: repeat(6, 1fr); position: relative; }
+    .spp-steps::before { content: ""; position: absolute; top: 28px; left: 8%; right: 8%; height: 2px; background: var(--gradient-primary); opacity: .35; }
+    .spp-step { text-align: center; padding: 0 10px; position: relative; }
+    .spp-step .dot { width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; background: #fff; border: 2px solid #0795E9; color: #0795E9; display: flex; align-items: center; justify-content: center; font-size: 22px; position: relative; z-index: 1; }
+    .spp-step h5 { font-size: 15px; font-weight: 700; color: var(--heading); margin: 0 0 6px; }
+    .spp-step p { font-size: 13.5px; line-height: 1.6; color: var(--text); margin: 0; }
+
+    /* Specs split */
+    .spp-split { display: grid; grid-template-columns: 5fr 7fr; gap: 40px; align-items: start; }
+    .spp-split .sticky { position: sticky; top: 90px; }
+    .spp-dl { margin: 0; border: 1px solid var(--gray-light); border-radius: var(--radius); overflow: hidden; background: #fff; }
+    .spp-dl > div { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--gray-light); }
+    .spp-dl > div:last-child { border-bottom: 0; }
+    .spp-dl dt { font-weight: 600; color: var(--heading); font-size: 14.5px; }
+    .spp-dl dd { margin: 0; color: var(--text); font-size: 14.5px; line-height: 1.6; }
+    .spp-points { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+    .spp-points li { display: flex; gap: 10px; color: var(--gray-dark); font-size: 15px; }
+    .spp-points i { color: #0795E9; margin-top: 3px; }
+
+    /* Why — dark band */
+    .spp-dark { background: #111827; color: #fff; }
+    .spp-dark .spp-head h2 { color: #fff; }
+    .spp-dark .spp-head p { color: rgba(255,255,255,.75); }
+    .spp-dark .spp-eyebrow { color: #5eead4; }
+    .spp-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.12); border-radius: var(--radius); overflow: hidden; }
+    .spp-why > div { background: #172033; padding: 26px; }
+    .spp-why i { font-size: 24px; color: #0795E9; }
+    .spp-why h4 { font-size: 17px; font-weight: 700; margin: 10px 0 6px; color: #fff; }
+    .spp-why p { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,.72); margin: 0; }
+
+    /* CTA + downloads */
+    .spp-cta { display: grid; grid-template-columns: 7fr 5fr; gap: 24px; }
+    .spp-cta-main { background: var(--gradient-primary); color: #fff; border-radius: var(--radius-lg); padding: 36px; }
+    .spp-cta-main h3 { font-size: 28px; font-weight: 700; margin: 0 0 10px; color: #fff; }
+    .spp-cta-main p { margin: 0 0 20px; opacity: .92; line-height: 1.7; }
+    .spp-dls { display: grid; gap: 14px; align-content: center; }
+    .spp-dl-item { display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: #fff; border: 1px solid var(--gray-light); border-radius: var(--radius); text-decoration: none; transition: var(--transition); }
+    .spp-dl-item:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .spp-dl-item i.f { font-size: 28px; color: #0795E9; }
+    .spp-dl-item strong { display: block; color: var(--heading); font-size: 15.5px; }
+    .spp-dl-item small { color: var(--text); }
+    .spp-dl-item i.d { margin-left: auto; color: #0795E9; font-size: 20px; }
+
+    /* FAQ */
+    .spp-faq { display: grid; grid-template-columns: 4fr 8fr; gap: 40px; align-items: start; }
+    .spp-faq .accordion-button { font-weight: 600; font-size: 15.5px; }
+    .spp-faq .accordion-button:not(.collapsed) { color: var(--primary-dark); background: rgba(6,191,191,.08); box-shadow: none; }
+
+    @media (max-width: 991px) {
+        .spp-hero h1 { font-size: 40px; }
+        .spp-stats { grid-template-columns: repeat(2, 1fr); }
+        .spp-stat:nth-child(2) { border-right: 0; }
+        .spp-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+        .spp-bento { grid-template-columns: repeat(2, 1fr); }
+        .spp-compare, .spp-why { grid-template-columns: 1fr; }
+        .spp-steps { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+        .spp-steps::before { display: none; }
+        .spp-split, .spp-cta, .spp-faq { grid-template-columns: 1fr; }
+        .spp-split .sticky { position: static; }
+    }
+    @media (max-width: 576px) {
+        .spp-sec { padding: 40px 0; }
+        .spp-hero { padding-top: 90px; }
+        .spp-hero h1 { font-size: 32px; }
+        .spp-head h2 { font-size: 26px; }
+        .spp-bento { grid-template-columns: 1fr; }
+        .spp-tile.feature { grid-column: auto; grid-row: auto; }
+        .spp-steps { grid-template-columns: 1fr; }
+        .spp-dl > div { grid-template-columns: 1fr; gap: 2px; }
+        .spp-cta-main { padding: 26px; }
+    }
+</style>
+</head>
+<body>
+<a class="btn btn-light product-page-back" href="../../../products.html">
+<i class="bi bi-arrow-left"></i> Back to Products
+</a>
+
+<!-- HERO -->
+<section class="spp-hero">
+<div class="spp-wrap">
+<div class="spp-hero-grid">
+<div class="spp-hero-copy">
+<span class="spp-eyebrow">Solar EPC &amp; Power Plants</span>
+<h1>Power Your Future with <span>Solar Power Plants</span></h1>
+<p>From homes and factories to multi-megawatt solar farms, Charzee designs, supplies, installs and maintains solar plants that lower your energy cost, protect you from rising tariffs and keep your operations on clean power.</p>
+<div class="spp-btns">
+<a class="btn btn-primary btn-lg" href="../../../contact.html">Get a Free Quote</a>
+<a class="btn btn-outline-light btn-lg" href="#plans">Explore Plant Types</a>
+</div>
+</div>
+</div>
+</div>
+<div class="spp-stats">
+<div class="spp-stat"><i class="bi bi-currency-rupee"></i><div><strong>Lower Bills</strong><small>Cut grid power cost</small></div></div>
+<div class="spp-stat"><i class="bi bi-clock-history"></i><div><strong>25-Year Life</strong><small>Long-term generation</small></div></div>
+<div class="spp-stat"><i class="bi bi-battery-charging"></i><div><strong>Storage Ready</strong><small>Add BESS anytime</small></div></div>
+<div class="spp-stat"><i class="bi bi-cloud-check-fill"></i><div><strong>Live Monitoring</strong><small>Track every kWh</small></div></div>
+</div>
+</section>
+
+<!-- SEGMENTS -->
+<section class="spp-sec">
+<div class="spp-wrap">
+<div class="spp-head">
+<span class="spp-eyebrow">Who We Serve</span>
+<h2>Solar for Every Segment</h2>
+<p>Whether you power a home, a business or a grid, we size and build the right plant for your site.</p>
+</div>
+<div class="spp-bento">
+<div class="spp-tile feature"><i class="bi bi-grid-3x3-gap-fill"></i><h4>Ground-Mounted Utility Plants</h4><p>Multi-MW solar farms engineered for bankable yield, grid compliance and a 25-year operating life.</p></div>
+<div class="spp-tile"><i class="bi bi-house-heart-fill"></i><h4>Residential</h4><p>Rooftop systems sized to your home, with net metering and subsidy paperwork handled.</p></div>
+<div class="spp-tile"><i class="bi bi-shop"></i><h4>Commercial</h4><p>Offices, malls, hotels and hospitals offset daytime power cost with low-disruption installs.</p></div>
+<div class="spp-tile"><i class="bi bi-buildings-fill"></i><h4>Industrial</h4><p>Rooftop and ground plants that lower the cost of every unit used on the factory floor.</p></div>
+<div class="spp-tile"><i class="bi bi-battery-charging"></i><h4>Solar + Storage</h4><p>Pair solar with Charzee BESS to shift energy and ride through outages.</p></div>
+<div class="spp-tile"><i class="bi bi-ev-front-fill"></i><h4>EV Charging Hubs</h4><p>Run charging stations and fleet depots on your own clean generation.</p></div>
+<div class="spp-tile"><i class="bi bi-signpost-split-fill"></i><h4>Remote Sites</h4><p>Standalone power for locations with weak or no grid supply.</p></div>
+</div>
+</div>
+</section>
+
+<!-- PLANT TYPES -->
+<section class="spp-sec alt" id="plans">
+<div class="spp-wrap">
+<div class="spp-head">
+<span class="spp-eyebrow">Plant Types</span>
+<h2>Choose the Right Configuration</h2>
+<p>Pick based on your grid availability, backup need and savings goal.</p>
+</div>
+<div class="spp-compare">
+<div class="spp-plan">
+<h3>On-Grid</h3>
+<p class="sub">Grid-connected with net metering.</p>
+<ul>
+<li><i class="bi bi-check-circle-fill"></i>No batteries needed</li>
+<li><i class="bi bi-check-circle-fill"></i>Lowest cost per unit</li>
+<li><i class="bi bi-check-circle-fill"></i>Fastest payback</li>
+<li><i class="bi bi-check-circle-fill"></i>Best for homes and businesses with a stable grid</li>
+</ul>
+</div>
+<div class="spp-plan hot">
+<span class="tag">Most Flexible</span>
+<h3>Hybrid</h3>
+<p class="sub">Solar + battery + grid together.</p>
+<ul>
+<li><i class="bi bi-check-circle-fill"></i>Backup during outages</li>
+<li><i class="bi bi-check-circle-fill"></i>Peak-load shaving</li>
+<li><i class="bi bi-check-circle-fill"></i>Smart energy management</li>
+<li><i class="bi bi-check-circle-fill"></i>Best for critical loads and high tariffs</li>
+</ul>
+</div>
+<div class="spp-plan">
+<h3>Off-Grid</h3>
+<p class="sub">Fully independent, battery-backed.</p>
+<ul>
+<li><i class="bi bi-check-circle-fill"></i>No utility connection required</li>
+<li><i class="bi bi-check-circle-fill"></i>Battery storage included</li>
+<li><i class="bi bi-check-circle-fill"></i>Reliable round-the-clock power</li>
+<li><i class="bi bi-check-circle-fill"></i>Best for remote and rural sites</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="spp-sec">
+<div class="spp-wrap">
+<div class="spp-head">
+<span class="spp-eyebrow">How We Work</span>
+<h2>From Survey to Support</h2>
+<p>A clear six-step delivery model keeps your project on schedule and on budget.</p>
+</div>
+<div class="spp-steps">
+<div class="spp-step"><div class="dot"><i class="bi bi-geo-alt-fill"></i></div><h5>1. Site Survey</h5><p>Shadow analysis, roof or land check and load study.</p></div>
+<div class="spp-step"><div class="dot"><i class="bi bi-pencil-square"></i></div><h5>2. Design</h5><p>Capacity sizing, electrical design and yield simulation.</p></div>
+<div class="spp-step"><div class="dot"><i class="bi bi-box-seam-fill"></i></div><h5>3. Procurement</h5><p>Certified modules, inverters and structures.</p></div>
+<div class="spp-step"><div class="dot"><i class="bi bi-tools"></i></div><h5>4. Installation</h5><p>Safe, scheduled mounting and electrical work.</p></div>
+<div class="spp-step"><div class="dot"><i class="bi bi-clipboard-check-fill"></i></div><h5>5. Commissioning</h5><p>Net-metering formalities, testing and grid sync.</p></div>
+<div class="spp-step"><div class="dot"><i class="bi bi-headset"></i></div><h5>6. O&amp;M</h5><p>Maintenance and live dashboard monitoring.</p></div>
+</div>
+</div>
+</section>
+
+<!-- SPECS -->
+<section class="spp-sec alt">
+<div class="spp-wrap">
+<div class="spp-split">
+<div class="sticky">
+<div class="spp-head left">
+<span class="spp-eyebrow">Plant Details</span>
+<h2>What Goes Into Every Plant</h2>
+<p>Final configuration is confirmed after a site survey, area check, grid review and load study.</p>
+</div>
+<ul class="spp-points">
+<li><i class="bi bi-graph-up-arrow"></i>High-efficiency modules with low degradation</li>
+<li><i class="bi bi-cpu-fill"></i>Smart inverters with MPPT and remote diagnostics</li>
+<li><i class="bi bi-shield-check"></i>Complete electrical protection</li>
+<li><i class="bi bi-wind"></i>Structures built for local wind and weather</li>
+</ul>
+</div>
+<dl class="spp-dl">
+<div><dt>Plant Types</dt><dd>On-Grid (net metering), Hybrid (solar + battery + grid), Off-Grid (battery-backed)</dd></div>
+<div><dt>Capacity Range</dt><dd>A few kWp rooftop systems up to multi-MW ground-mounted plants</dd></div>
+<div><dt>Mounting</dt><dd>RCC and metal-sheet rooftop, elevated structures, ground-mount and carport</dd></div>
+<div><dt>Inverters</dt><dd>String and central inverters with MPPT and remote diagnostics</dd></div>
+<div><dt>Battery Storage</dt><dd>Optional lithium-ion BESS for hybrid and off-grid plants</dd></div>
+<div><dt>Monitoring</dt><dd>Cloud dashboard for generation, performance ratio, alerts and CO2 savings</dd></div>
+<div><dt>Protection</dt><dd>Surge, earthing, over-current, short-circuit and earth-fault protection</dd></div>
+<div><dt>Services</dt><dd>Survey, design, approvals, installation, commissioning and O&amp;M</dd></div>
+</dl>
+</div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="spp-sec spp-dark">
+<div class="spp-wrap">
+<div class="spp-head">
+<span class="spp-eyebrow">Why Charzee</span>
+<h2>Reliable Solar from Design to Support</h2>
+<p>We plan, build and manage plants around your energy goals, budget and grid conditions.</p>
+</div>
+<div class="spp-why">
+<div><i class="bi bi-pencil-square"></i><h4>Custom-Engineered</h4><p>Designed around your roof, load profile and savings target.</p></div>
+<div><i class="bi bi-tools"></i><h4>Turnkey Delivery</h4><p>One partner from survey and approvals to handover.</p></div>
+<div><i class="bi bi-currency-rupee"></i><h4>Clear Savings</h4><p>Transparent costing with estimated payback before you commit.</p></div>
+<div><i class="bi bi-cloud-check-fill"></i><h4>Visible Performance</h4><p>Real-time dashboards show exactly what your plant produces.</p></div>
+<div><i class="bi bi-patch-check-fill"></i><h4>Quality Components</h4><p>Certified modules and inverters with standard warranties.</p></div>
+<div><i class="bi bi-headset"></i><h4>Lifetime Support</h4><p>Dedicated O&amp;M and technical help after installation.</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA + DOWNLOADS -->
+<section class="spp-sec" id="downloads">
+<div class="spp-wrap">
+<div class="spp-cta">
+<div class="spp-cta-main">
+<h3>Ready to Go Solar?</h3>
+<p>Tell us about your site and monthly consumption. Our team will prepare a sizing, savings estimate and project plan for you.</p>
+<a class="btn btn-light btn-lg" href="../../../contact.html">Request a Quote</a>
+</div>
+<div class="spp-dls">
+<a class="spp-dl-item" href="#"><i class="bi bi-file-earmark-pdf-fill f"></i><div><strong>Product Brochure</strong><small>Plant types, segments and process</small></div><i class="bi bi-download d"></i></a>
+<a class="spp-dl-item" href="#"><i class="bi bi-file-earmark-text-fill f"></i><div><strong>Technical Datasheet</strong><small>Components and electrical options</small></div><i class="bi bi-download d"></i></a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="spp-sec alt">
+<div class="spp-wrap">
+<div class="spp-faq">
+<div class="spp-head left">
+<span class="spp-eyebrow">FAQ</span>
+<h2>Everything You Need to Know</h2>
+<p>Quick answers on plant types, savings, installation and upkeep.</p>
+</div>
+<div class="accordion custom-faq" id="plantFaqAccordion">
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button" data-bs-target="#plantFaq1" data-bs-toggle="collapse" type="button">What is the difference between On-Grid, Hybrid and Off-Grid plants?</button></h2>
+<div class="accordion-collapse collapse show" data-bs-parent="#plantFaqAccordion" id="plantFaq1"><div class="accordion-body">On-Grid plants exchange power with the utility through net metering and need no batteries. Hybrid plants add battery storage so critical loads stay on during outages. Off-Grid plants run on solar and batteries alone, which suits remote sites.</div></div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#plantFaq2" data-bs-toggle="collapse" type="button">How much can I save with a solar power plant?</button></h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plantFaqAccordion" id="plantFaq2"><div class="accordion-body">Savings depend on your tariff, consumption and system size. After a site survey we share an estimated generation, unit-cost saving and payback period so you can decide with real numbers.</div></div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#plantFaq3" data-bs-toggle="collapse" type="button">How long does installation take?</button></h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plantFaqAccordion" id="plantFaq3"><div class="accordion-body">Rooftop systems are usually installed within a few weeks of approvals and material delivery. Larger industrial and ground-mounted plants follow a project schedule agreed after design.</div></div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#plantFaq4" data-bs-toggle="collapse" type="button">Do you help with approvals and net metering?</button></h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plantFaqAccordion" id="plantFaq4"><div class="accordion-body">Yes. We handle the documentation and coordination for net metering and utility approvals, and support subsidy applications where they apply.</div></div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#plantFaq5" data-bs-toggle="collapse" type="button">Do I need a battery?</button></h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plantFaqAccordion" id="plantFaq5"><div class="accordion-body">Not for On-Grid plants. Batteries are recommended for Hybrid systems and required for Off-Grid ones. You can also add Charzee BESS later.</div></div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-target="#plantFaq6" data-bs-toggle="collapse" type="button">What maintenance does a solar plant need?</button></h2>
+<div class="accordion-collapse collapse" data-bs-parent="#plantFaqAccordion" id="plantFaq6"><div class="accordion-body">Periodic module cleaning, inspections and inverter checks. Our O&amp;M service and live dashboard flag any drop in performance early.</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div id="productFooter"></div>
+<div id="serviceAgent"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../../../assets/js/service-agent.js"></script>
+<script src="../../../assets/js/product-footer.js"></script>
+<script src="../../../assets/js/backtotop.js"></script>
+<script src="../../../assets/js/content-slider.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
 
     width:100%;
 
-    min-height:100vh;
+    min-height:min(100vh, 800px); /* capped so the wide slider photo is not zoomed on tall screens */
 
     display:flex;
 

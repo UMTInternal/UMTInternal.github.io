@@ -1631,3 +1631,14 @@ FINAL CTA
 .bess-project-dot.active{width:55px;background:#00d5e8}
 @media(max-width:768px){.bess-project-slider-section{padding:70px 0 80px}.bess-project-slider{height:500px;padding:0 14px}.bess-project-track{border-radius:18px}.bess-project-copy{left:8%;right:8%;bottom:14%}.bess-project-copy h3{font-size:34px}.bess-project-copy p{font-size:15px}.bess-project-arrow{width:42px;height:42px}.bess-project-arrow.prev{left:28px}.bess-project-arrow.next{right:28px}.bess-project-dots{bottom:20px}}
 
+/* Project slider: same overlay design, image shown in full (3:2, never cropped) */
+.bess-project-slider-section{padding:60px 0 50px}
+.bess-project-slider{height:auto;max-width:1040px;padding:0 20px}
+.bess-project-track{height:auto;aspect-ratio:3/2;background:#0b1620}
+.bess-project-slide img{object-fit:contain;background:#0b1620}
+.bess-project-copy{left:6%;bottom:12%;max-width:560px}
+.bess-project-copy h3{font-size:clamp(24px,3.2vw,42px)}
+.bess-project-copy p{font-size:16px}
+.bess-project-arrow.prev{left:36px}.bess-project-arrow.next{right:36px}
+@media(max-width:768px){.bess-project-slider-section{padding:44px 0 50px}.bess-project-slider{height:auto;padding:0 12px}.bess-project-track{aspect-ratio:3/2}.bess-project-copy{left:6%;right:6%;bottom:10%}.bess-project-copy h3{font-size:20px;margin-bottom:6px}.bess-project-copy p{font-size:12.5px;line-height:1.45}.bess-project-number{width:34px;height:34px;margin-bottom:8px}.bess-project-arrow{width:36px;height:36px;top:50%}.bess-project-arrow.prev{left:20px}.bess-project-arrow.next{right:20px}.bess-project-dots{bottom:10px}}
+

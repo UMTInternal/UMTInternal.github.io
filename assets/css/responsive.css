@@ -173,7 +173,7 @@ body {
     /* --- 🧭 Header --- */
     .header               { padding: 10px 0; }
     .header-space         { height: 75px; }
-    .navbar-brand img     { height: 46px; }
+    .navbar-brand img     { height: 58px; }
 
     /* --- 🦸 Hero --- */
     .hero                 { text-align: center; min-height: 90vh; padding-top: 75px; }
@@ -311,7 +311,7 @@ body {
 @media (max-width: 576px) {
 
     /* --- 🧭 Header --- */
-    .navbar-brand img     { height: 40px; }
+    .navbar-brand img     { height: 52px; }
     .header-space         { height: 70px; }
 
     /* --- 🦸 Hero --- */
@@ -422,7 +422,7 @@ body {
     border-bottom       : 1px solid rgba(255, 255, 255, .08);
 }
 
-.mobile-nav-logo      { height: 46px; }
+.mobile-nav-logo      { height: 58px; width: auto; object-fit: contain; }
 
 .mobile-nav-close {
     background          : none;

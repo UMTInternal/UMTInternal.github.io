@@ -75,7 +75,7 @@
 
 .navbar-brand img{
 
-    height:78px;
+    height:56px;
 
     transition:.35s;
 
@@ -83,7 +83,7 @@
 
 .header.scrolled .navbar-brand img{
 
-    height:66px;
+    height:46px;
 
 }
 
@@ -96,29 +96,13 @@
 
     align-items:center;
 
-    justify-content:center;
-
-    gap:24px;
-
-    margin-left:auto;
-
-    margin-right:auto;
-
-}
-
-.navbar-brand{
-
-    flex-shrink:0;
+    gap:39px;
 
 }
 
 .nav-item{
 
     position:relative;
-
-    display:flex;
-
-    align-items:center;
 
 }
 
@@ -135,8 +119,6 @@
     transition:.35s;
 
     position:relative;
-
-    white-space:nowrap;
 
 }
 
@@ -213,42 +195,6 @@
     white-space:nowrap;
 
     box-shadow:0 12px 26px rgba(6,191,191,.22);
-
-    margin-left:10px;
-
-}
-
-@media (max-width:1199px){
-
-    .navbar-nav{
-
-        gap:16px;
-
-    }
-
-    .nav-link{
-
-        font-size:14px;
-
-        padding:8px 10px !important;
-
-    }
-
-}
-
-@media (max-width:991px){
-
-    .navbar-nav{
-
-        gap:10px;
-
-    }
-
-    .nav-link{
-
-        padding:8px 10px !important;
-
-    }
 
 }
 

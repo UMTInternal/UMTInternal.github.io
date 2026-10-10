@@ -52,7 +52,15 @@
     .spp-tile i { font-size: 26px; color: #0795E9; display: block; margin-bottom: 12px; }
     .spp-tile h4 { font-size: 18px; font-weight: 700; color: var(--heading); margin: 0 0 6px; }
     .spp-tile p { font-size: 14.5px; line-height: 1.65; color: var(--text); margin: 0; }
-    .spp-tile.feature { grid-column: span 2; grid-row: span 2; background: #111827; color: #fff; border: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+    .spp-tile.feature { grid-column: span 2; grid-row: span 2; background: #111827; color: #fff; border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 16px; }
+    .spp-tile.feature .feature-media { margin: 0; padding: 0; overflow: hidden; border-radius: 16px 16px 0 0; }
+    .spp-tile.feature img { display: block; width: 100%; height: 240px; margin: 0; padding: 0; object-fit: cover; object-position: center; background: #071422; border: 0; border-radius: 0; }
+    .spp-tile.feature > i,
+    .spp-tile.feature > h4,
+    .spp-tile.feature > p { padding-left: 22px; padding-right: 22px; }
+    .spp-tile.feature > i { margin-top: 18px; margin-bottom: 10px; }
+    .spp-tile.feature > h4 { margin: 0 0 8px; }
+    .spp-tile.feature > p { padding-bottom: 22px; }
     .spp-tile.feature i { color: #0795E9; font-size: 40px; }
     .spp-tile.feature h4 { color: #fff; font-size: 26px; }
     .spp-tile.feature p { color: rgba(255,255,255,.8); font-size: 16px; }
@@ -179,7 +187,14 @@
 <p>Whether you power a home, a business or a grid, we size and build the right plant for your site.</p>
 </div>
 <div class="spp-bento">
-<div class="spp-tile feature"><i class="bi bi-grid-3x3-gap-fill"></i><h4>Ground-Mounted Utility Plants</h4><p>Multi-MW solar farms engineered for bankable yield, grid compliance and a 25-year operating life.</p></div>
+<div class="spp-tile feature">
+<div class="feature-media">
+<img alt="Ground-mounted utility solar plant" src="../../../assets/images/new-logo-image.jpeg" style="display:block; width:100%; height:240px; object-fit:cover; object-position:center; background:#071422; margin:0; padding:0; border:0;"/>
+</div>
+<i class="bi bi-grid-3x3-gap-fill"></i>
+<h4>Ground-Mounted Utility Plants</h4>
+<p>Multi-MW solar farms engineered for bankable yield, grid compliance and a 25-year operating life.</p>
+</div>
 <div class="spp-tile"><i class="bi bi-house-heart-fill"></i><h4>Residential</h4><p>Rooftop systems sized to your home, with net metering and subsidy paperwork handled.</p></div>
 <div class="spp-tile"><i class="bi bi-shop"></i><h4>Commercial</h4><p>Offices, malls, hotels and hospitals offset daytime power cost with low-disruption installs.</p></div>
 <div class="spp-tile"><i class="bi bi-buildings-fill"></i><h4>Industrial</h4><p>Rooftop and ground plants that lower the cost of every unit used on the factory floor.</p></div>

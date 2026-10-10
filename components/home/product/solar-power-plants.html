@@ -52,12 +52,13 @@
     .spp-tile i { font-size: 26px; color: #0795E9; display: block; margin-bottom: 12px; }
     .spp-tile h4 { font-size: 18px; font-weight: 700; color: var(--heading); margin: 0 0 6px; }
     .spp-tile p { font-size: 14.5px; line-height: 1.65; color: var(--text); margin: 0; }
-    .spp-tile.feature { grid-column: span 2; grid-row: span 2; background: #111827; color: #fff; border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 16px; }
-    .spp-tile.feature .feature-media { margin: 0; padding: 0; overflow: hidden; border-radius: 16px 16px 0 0; }
-    .spp-tile.feature img { display: block; width: 100%; height: 240px; margin: 0; padding: 0; object-fit: cover; object-position: center; background: #071422; border: 0; border-radius: 0; }
+    .spp-tile.feature { position: relative; grid-column: span 2; grid-row: span 2; min-height: 380px; background: #111827; color: #fff; border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 16px; }
+    .spp-tile.feature .feature-media { position: absolute; inset: 0; margin: 0; padding: 0; overflow: hidden; border-radius: inherit; }
+    .spp-tile.feature .feature-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,20,34,.05) 15%, rgba(7,20,34,.38) 48%, rgba(7,20,34,.92) 100%); }
+    .spp-tile.feature img { display: block; width: 100%; height: 100%; margin: 0; padding: 0; object-fit: cover; object-position: center; background: #071422; border: 0; border-radius: 0; }
     .spp-tile.feature > i,
     .spp-tile.feature > h4,
-    .spp-tile.feature > p { padding-left: 22px; padding-right: 22px; }
+    .spp-tile.feature > p { position: relative; z-index: 1; padding-left: 22px; padding-right: 22px; }
     .spp-tile.feature > i { margin-top: 18px; margin-bottom: 10px; }
     .spp-tile.feature > h4 { margin: 0 0 8px; }
     .spp-tile.feature > p { padding-bottom: 22px; }
@@ -143,7 +144,7 @@
         .spp-hero h1 { font-size: 32px; }
         .spp-head h2 { font-size: 26px; }
         .spp-bento { grid-template-columns: 1fr; }
-        .spp-tile.feature { grid-column: auto; grid-row: auto; }
+        .spp-tile.feature { grid-column: auto; grid-row: auto; min-height: 360px; }
         .spp-steps { grid-template-columns: 1fr; }
         .spp-dl > div { grid-template-columns: 1fr; gap: 2px; }
         .spp-cta-main { padding: 26px; }
@@ -189,7 +190,7 @@
 <div class="spp-bento">
 <div class="spp-tile feature">
 <div class="feature-media">
-<img alt="Ground-mounted utility solar plant" src="../../../assets/images/new-logo-image.jpeg" style="display:block; width:100%; height:240px; object-fit:cover; object-position:center; background:#071422; margin:0; padding:0; border:0;"/>
+<img alt="Ground-mounted utility solar plant" src="../../../assets/images/new-logo-image.jpeg"/>
 </div>
 <i class="bi bi-grid-3x3-gap-fill"></i>
 <h4>Ground-Mounted Utility Plants</h4>
